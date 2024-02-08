@@ -3,7 +3,7 @@ function openNavbar()
 {
     sidenav.style.left="0"
 }
-function closeNavbar()
+ function closeNavbar()
 {
     sidenav.style.left="-60%"
 }
