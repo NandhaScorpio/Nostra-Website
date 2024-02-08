@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>Nostra</h1>
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+        <div class="navbar-menu-toggle" onclick="openNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <div class="side-navbar">
+        <p style="text-align: right;" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="side-navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+        
+    </div>
+    <div class="product-section">
+        <form class="product-search">
+            <input type="text" id="search" placeholder="Search" onkeyup="hearch(event)">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+
+        <div class="products" id="products">
+            <div class="product-box">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/008/534/684/small/white-t-shirt-mockup-cutout-file-png.png" alt="white shirt">
+                <p class="product-paragraph">White Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/030/791/231/small/illustration-of-a-fashion-portrait-with-plain-t-shirt-mockup-ai-generated-photo.jpg" alt="black shirt">
+                <p>Black Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://cpimg.tistatic.com/7151135/s/4/Formal-Royal-Blue-Shirt.jpg" alt="green shirt">
+                <p>Blue Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="data:image/jpeg;base64,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" alt="yellow shirt">
+                <p>Yellow Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://rlv.zcache.com/epic_purple_shirt-r5860fb97ed9a438a90acc9ebea598c48_k21b4_200.jpg" alt="yellow shirt">
+                <p>Purple Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://media.very.co.uk/i/very/VHILR_SQ1_0000000047_GREEN_MDf/barbour-kentrigg-back-print-t-shirt-green.jpg?$200x200_socialshare$" alt="yellow shirt">
+                <p>Green Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/000/230/198/small/orange-t-shirt-model-vector.jpg" alt="yellow shirt">
+                <p>Orange Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/000/230/137/small/red-t-shirt-model-vector.jpg" alt="yellow shirt">
+                <p>Red Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://unicphscat.blob.core.windows.net/images-prd/small/s8794220.png" alt="yellow shirt">
+                <p>Cyan Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://images-static.nykaa.com/media/catalog/product/5/c/5cd0d02904267_1.jpg?tr=cm-pad_resize,w-200,h-200" alt="yellow shirt">
+                <p>Brown Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://images-static.nykaa.com/media/catalog/product/e/4/e484f2aAE1517-271-1.jpg?tr=cm-pad_resize,w-200,h-200" alt="yellow shirt">
+                <p>Beige Shirt</p>
+            </div>
+
+            <div class="product-box">
+                <img src="https://sppsilks.com/image/cache/catalog/SILK%20SHIRT/1-200x200.jpg" alt="yellow shirt">
+                <p>Navy blue Shirt</p>
+            </div>
+        </div>
+    </div>
+        <div class="footer">
+            <div class="footer-container">
+                <div class="footer-box-1">
+                    <h2 class="headingText">Nostra</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, error sed inventore vel ipsam maqua.</p>
+                    <div class="footer-icon-container">
+                        <i class="fa-brands fa-whatsapp" style="color:#ffffff ;"></i>
+                        <i class="fa-brands fa-facebook" style="color:#ffffff ;"></i>
+                        <i class="fa-brands fa-twitter" style="color:#ffffff ;"></i>
+                        <i class="fa-brands fa-instagram" style="color:#ffffff ;"></i>
+                    </div>
+                </div>
+            </div>
+            <p>@ 2024 Nostra.com</p>
+        </div>
+       
+
+</body>
+<script src="E:\Nandha P G Class\My Projects\HTML,CSS,JS Projects\Nostra Website\collection.js">
+    
+</script>
+
+</html>
